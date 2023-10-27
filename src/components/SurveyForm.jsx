@@ -10,6 +10,7 @@ const SurveyForm = ({ questions }) => {
     const [answers, setAnswers] = useState(Array(questions.length).fill(''));
     const [scores, setScores] = useState(Array(questions.length).fill(0));
     const [scoreScalers, setScoreScalers] = useState(Array(questions.length).fill(1));
+    const [showPopup, setShowPopup] = useState(false);
 
     const handleAnswer = (answer, score, scoreScaler) => {
         const newAnswers = [...answers];
@@ -38,6 +39,8 @@ const SurveyForm = ({ questions }) => {
             } else {
                 alert("Please answer the current question before proceeding.");
             }
+        } else {
+            setShowPopup(true); // Reached the end, show the pop-up
         }
     };
 
@@ -54,6 +57,14 @@ const SurveyForm = ({ questions }) => {
             default:
                 return false;
         }
+    };
+
+    const calculateTotalScore = () => {
+        const totalScore = scores.reduce((acc, score, index) => {
+            return acc + (score || 0) * (scoreScalers[index] || 1);
+        }, 0);
+    
+        return totalScore;
     };
 
     const calculateSuggestions = (score) => {

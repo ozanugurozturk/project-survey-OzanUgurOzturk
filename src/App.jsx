@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import RadioQuestions from './components/RadioQuestions';
+import RadioQuestion from './components/RadioQuestion';
 import questions from './assets/questions.json'
 
 
@@ -23,7 +23,7 @@ const App = () => {
     <div>
       <h1>How are you feeling today?</h1>
       {step < questions.length ? (
-        <RadioQuestions
+        <RadioQuestion
           question={questions[step].question}
           options={questions[step].options}
           answer={answers[step]}

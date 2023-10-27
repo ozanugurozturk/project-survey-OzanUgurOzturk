@@ -1,22 +1,9 @@
 import React, { useState } from 'react';
-import Question from './components/Questions';
+import RadioQuestions from './components/RadioQuestions';
+import questions from './assets/questions.json'
+
 
 const App = () => {
-  const questions = [
-    {
-      question: 'How do you feel today?',
-      options: ['Happy', 'Neutral', 'Unhappy'],
-    },
-    {
-      question: 'What is the main reason for your mood?',
-      options: ['Work', 'Family', 'Health'],
-    },
-    {
-      question: 'Any specific thing making you feel this way?',
-      options: ['Yes', 'No'],
-    },
-  ];
-
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState([]);
 
@@ -36,7 +23,7 @@ const App = () => {
     <div>
       <h1>How are you feeling today?</h1>
       {step < questions.length ? (
-        <Question
+        <RadioQuestions
           question={questions[step].question}
           options={questions[step].options}
           answer={answers[step]}

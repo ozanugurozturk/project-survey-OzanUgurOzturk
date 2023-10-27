@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Question = ({ question, options, answer, onAnswer }) => (
+const RadioQuestions = ({ question, options, answer, onAnswer }) => (
   <div>
     <h2>{question}</h2>
     {options.map((option) => (
@@ -17,4 +17,4 @@ const Question = ({ question, options, answer, onAnswer }) => (
   </div>
 );
 
-export default Question;
+export default RadioQuestions;

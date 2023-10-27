@@ -1,0 +1,14 @@
+[
+    {
+      "question": "How do you feel today?",
+      "options": ["Happy", "Neutral", "Unhappy"]
+    },
+    {
+      "question": "What is the main reason for your mood?",
+      "options": ["Work", "Family", "Health"]
+    },
+    {
+      "question": "Any specific thing making you feel this way?",
+      "options": ["Yes", "No"]
+    }
+  ]

@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const CheckboxQuestion = ({ question, options, answer, onAnswer, scores, scoreScalers }) => {
     const handleOptionChange = (option, score, scoreScaler) => {
-        const updatedAnswer = answer.includes(option)
-            ? answer.filter((item) => item !== option)
-            : [...answer, option];
+        const updatedAnswer = answer === option ? '' : option;
         onAnswer(updatedAnswer, score, scoreScaler);
     };
 
@@ -17,8 +15,9 @@ const CheckboxQuestion = ({ question, options, answer, onAnswer, scores, scoreSc
                         type="checkbox"
                         id={option}
                         value={option}
-                        checked={answer.includes(option)}
-                        onChange={() => handleOptionChange(option, scores[index], scoreScalers[index])} />
+                        checked={answer === option}
+                        onChange={() => handleOptionChange(option, scores[index], scoreScalers[index])}
+                    />
                     <label htmlFor={option}>{option}</label>
                 </div>
             ))}

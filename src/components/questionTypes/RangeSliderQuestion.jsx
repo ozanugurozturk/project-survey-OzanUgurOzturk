@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const RangeSliderQuestion = ({ question, min, max, answer, onAnswer, scores, scoreScalers }) => {
-  const handleChange = (value, score, scoreScaler) => {
-    onAnswer(Number(value), score, scoreScaler);
-  };
+    const [sliderValue, setSliderValue] = useState(answer.toString());
 
-  return (
-    <div>
-      <h2>{question}</h2>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        value={answer}
-        onChange={(e) => handleChange(e.target.value, scores[e.target.value - min], scoreScalers[e.target.value - min])}
-      />
-      <p>{answer}</p>
-    </div>
-  );
+    useEffect(() => {
+        setSliderValue(answer.toString());
+    }, [answer]);
+
+    const handleChange = (value, score, scoreScaler) => {
+        setSliderValue(value);
+        onAnswer(value, score, scoreScaler);
+    };
+
+    return (
+        <div>
+            <h2>{question}</h2>
+            <input
+                type="range"
+                min={min}
+                max={max}
+                value={sliderValue}
+                onChange={(e) => handleChange(e.target.value, scores[e.target.value - min], scoreScalers[e.target.value - min])}
+            />
+            <p>{sliderValue}</p>
+        </div>
+    );
 };
 
 export default RangeSliderQuestion;

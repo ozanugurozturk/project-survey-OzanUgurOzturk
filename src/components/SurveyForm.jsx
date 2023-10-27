@@ -4,6 +4,7 @@ import RadioQuestion from './questionTypes/RadioQuestion';
 import SelectQuestion from './questionTypes/SelectQuestion';
 import CheckboxQuestion from './questionTypes/CheckboxQuestion';
 import RangeSliderQuestion from './questionTypes/RangeSliderQuestion';
+import SurveyResultPopup from './SurveyResultPopup';
 
 const SurveyForm = ({ questions }) => {
     const [step, setStep] = useState(0);
@@ -67,33 +68,17 @@ const SurveyForm = ({ questions }) => {
         return totalScore;
     };
 
-    const calculateSuggestions = (score) => {
-        if (score <= -100) {
-            return "1. Call your parents or someone who loves you no matter who you are.";
-        } else if (score <= 0) {
-            return "2. Call your high school friend to talk about the things you have done together.";
-        } else if (score <= 100) {
-            return "3. Tell yourself it is a great day, send a message to your loved one, ask them to do something at the end of the day.";
-        } else if (score <= 300) {
-            return "4. Share more time with your hobbies, maybe ask your friend to play basketball with you.";
-        } else {
-            return "5. Make your day even better by sharing your great day with someone, maybe you will be the source of happiness for your beloved one.";
-        }
-    };
-
     return (
         <div>
-            {step < questions.length ? (
-                renderQuestion(questions[step], answers[step], handleAnswer)
+            {showPopup ? (
+                <SurveyResultPopup
+                    questions={questions}
+                    answers={answers}
+                    totalScore={calculateTotalScore()}
+                    onClosePopup={() => setShowPopup(false)}
+                />
             ) : (
-                <div>
-                    <h2>Summary</h2>
-                    {answers.map((answer, index) => (
-                        <p key={index}>Question {index + 1}: {answer}</p>
-                    ))}
-                    <h2>Suggestions</h2>
-                    <p>{calculateSuggestions(totalScore)}</p>
-                </div>
+                renderQuestion(questions[step], answers[step], handleAnswer)
             )}
             <button onClick={handlePrevious} disabled={step === 0}>
                 Previous

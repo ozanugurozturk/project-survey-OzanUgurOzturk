@@ -8,16 +8,22 @@ import RangeSliderQuestion from './questionTypes/RangeSliderQuestion';
 const SurveyForm = ({ questions }) => {
     const [step, setStep] = useState(0);
     const [answers, setAnswers] = useState(Array(questions.length).fill(''));
+    const [scores, setScores] = useState(Array(questions.length).fill(0));
+    const [scoreScalers, setScoreScalers] = useState(Array(questions.length).fill(1));
     let totalScore = 0; // Initialize the total score variable
 
-    const handleAnswer = (answer, score) => {
+    const handleAnswer = (answer, score, scoreScaler) => {
         const newAnswers = [...answers];
         newAnswers[step] = answer;
         setAnswers(newAnswers);
 
-        if (score) {
-            totalScore += score; // Update the total score
-        }
+        const newScores = [...scores];
+        newScores[step] = score;
+        setScores(newScores);
+
+        const newScoreScalers = [...scoreScalers];
+        newScoreScalers[step] = scoreScaler;
+        setScores(newScoreScalers);
     };
 
     const handlePrevious = () => {

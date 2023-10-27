@@ -1,14 +1,23 @@
 [
     {
       "question": "How do you feel today?",
+      "type": "radio",
       "options": ["Happy", "Neutral", "Unhappy"]
     },
     {
       "question": "What is the main reason for your mood?",
+      "type": "select",
       "options": ["Work", "Family", "Health"]
     },
     {
-      "question": "Any specific thing making you feel this way?",
-      "options": ["Yes", "No"]
+      "question": "Are you experiencing any stress?",
+      "type": "checkbox",
+      "options": ["Work", "Family", "Health"]
+    },
+    {
+      "question": "On a scale of 1 to 10, how happy are you?",
+      "type": "range",
+      "min": 1,
+      "max": 10
     }
   ]

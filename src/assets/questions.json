@@ -1,23 +1,53 @@
 [
-    {
-      "question": "How do you feel today?",
-      "type": "radio",
-      "options": ["Happy", "Neutral", "Unhappy"]
-    },
-    {
-      "question": "What is the main reason for your mood?",
-      "type": "select",
-      "options": ["Work", "Family", "Health"]
-    },
-    {
-      "question": "Are you experiencing any stress?",
-      "type": "checkbox",
-      "options": ["Work", "Family", "Health"]
-    },
-    {
-      "question": "On a scale of 1 to 10, how happy are you?",
-      "type": "range",
-      "min": 1,
-      "max": 10
-    }
-  ]
+  {
+    "question": "How do you feel today?",
+    "type": "radio",
+    "options": ["Very Happy", "Happy", "Neutral", "Unhappy", "Very Unhappy"],
+    "score": [100, 50, 0, -50, -100]
+  },
+  {
+    "question": "What is the main reason for your mood?",
+    "type": "select",
+    "options": ["Work/School", "Family/Friend", "Health"],
+    "scoreScaler": [0.5, 0.75, 1]
+  },
+  {
+    "question": "Do you consider your mood as permenant or instantaneous?",
+    "type": "select",
+    "options": ["Yes", "Kinda both", "No"],
+    "scoreScaler": [0.5, 1, 1.5]
+  },
+  {
+    "question": "Are you experiencing any stress?",
+    "type": "checkbox",
+    "options": ["Yes", "No"],
+    "score": [-100, 0]
+  },
+  {
+    "question": "Has someone who loves you said anything positive about you today?",
+    "type": "checkbox",
+    "options": ["Yes", "No"],
+    "score": [200, -50]
+  },
+  {
+    "question": "How is the weather outside?",
+    "type": "checkbox",
+    "options": [
+      "Terrible!",
+      "Not that good.",
+      "So-so...",
+      "I have seen better days!",
+      "Cold but refreshing.",
+      "Beatiful!",
+      "Lovely!"
+    ],
+    "score": [-100, -50, 0, 25, 40, 75, 125]
+  },
+  {
+    "question": "On a scale of 1 to 10, how energetic are you?",
+    "type": "range",
+    "min": 1,
+    "max": 10,
+    "score": [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+  }
+]

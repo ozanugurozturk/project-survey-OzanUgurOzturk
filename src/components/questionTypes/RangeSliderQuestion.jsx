@@ -1,6 +1,10 @@
 import React from 'react';
 
-const RangeSliderQuestion = ({ question, min, max, answer, onAnswer }) => {
+const RangeSliderQuestion = ({ question, min, max, answer, onAnswer, scores }) => {
+  const handleChange = (value, score) => {
+    onAnswer(Number(value), score);
+  };
+
   return (
     <div>
       <h2>{question}</h2>
@@ -9,7 +13,7 @@ const RangeSliderQuestion = ({ question, min, max, answer, onAnswer }) => {
         min={min}
         max={max}
         value={answer}
-        onChange={(e) => onAnswer(Number(e.target.value))}
+        onChange={(e) => handleChange(e.target.value, scores[e.target.value - min])}
       />
       <p>{answer}</p>
     </div>

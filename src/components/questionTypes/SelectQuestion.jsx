@@ -1,13 +1,14 @@
 import React from 'react';
 
-const SelectQuestion = ({ question, options, answer, onAnswer, scores, scoreScaler }) => {
+const SelectQuestion = ({ question, options, answer, onAnswer, scores, scoreScalers }) => {
     const handleChange = (selectedOption) => {
         const index = options.indexOf(selectedOption);
-        if (index !== -1 && scores && scoreScaler) {
-            const score = scores[index] * scoreScaler[index];
-            onAnswer(selectedOption, score);
+        if (index !== -1 && scores && scoreScalers) {
+            const score = scores[index];
+            const scoreScaler = scoreScalers[index];
+            onAnswer(selectedOption, score, scoreScaler);
         } else {
-            onAnswer(selectedOption, 0); // Select type questions only have scalers in database so I am handling it this way
+            onAnswer(selectedOption, 0, 1);
         }
     };
 

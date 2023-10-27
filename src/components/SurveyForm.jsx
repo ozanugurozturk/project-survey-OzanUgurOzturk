@@ -10,7 +10,6 @@ const SurveyForm = ({ questions }) => {
     const [answers, setAnswers] = useState(Array(questions.length).fill(''));
     const [scores, setScores] = useState(Array(questions.length).fill(0));
     const [scoreScalers, setScoreScalers] = useState(Array(questions.length).fill(1));
-    let totalScore = 0; // Initialize the total score variable
 
     const handleAnswer = (answer, score, scoreScaler) => {
         const newAnswers = [...answers];
@@ -23,7 +22,7 @@ const SurveyForm = ({ questions }) => {
 
         const newScoreScalers = [...scoreScalers];
         newScoreScalers[step] = scoreScaler;
-        setScores(newScoreScalers);
+        setScoreScalers(newScoreScalers);
     };
 
     const handlePrevious = () => {
@@ -105,6 +104,7 @@ const renderQuestion = (question, answer, onAnswer) => {
                     answer={answer}
                     onAnswer={onAnswer}
                     scores={question.score} // Pass scores as a prop
+                    scoreScalers={question.scoreScaler} // Pass scoreScaler as a prop
                 />
             );
         case 'select':
@@ -115,6 +115,7 @@ const renderQuestion = (question, answer, onAnswer) => {
                     answer={answer}
                     onAnswer={onAnswer}
                     scores={question.score} // Pass scores as a prop
+                    scoreScalers={question.scoreScaler} // Pass scoreScaler as a prop
                 />
             );
         case 'checkbox':
@@ -125,6 +126,7 @@ const renderQuestion = (question, answer, onAnswer) => {
                     answer={answer}
                     onAnswer={onAnswer}
                     scores={question.score} // Pass scores as a prop
+                    scoreScalers={question.scoreScaler} // Pass scoreScaler as a prop
                 />
             );
         case 'range':
@@ -136,6 +138,7 @@ const renderQuestion = (question, answer, onAnswer) => {
                     answer={answer}
                     onAnswer={onAnswer}
                     scores={question.score} // Pass scores as a prop
+                    scoreScalers={question.scoreScaler} // Pass scoreScaler as a prop
                 />
             );
         default:
@@ -150,7 +153,7 @@ SurveyForm.propTypes = {
             type: PropTypes.string.isRequired,
             question: PropTypes.string.isRequired,
             options: PropTypes.arrayOf(PropTypes.string),
-            min: PropTypes.number, 
+            min: PropTypes.number,
             max: PropTypes.number,
             score: PropTypes.arrayOf(PropTypes.number), // Add a score prop
             scoreScaler: PropTypes.arrayOf(PropTypes.number), // Add scoreScaler prop

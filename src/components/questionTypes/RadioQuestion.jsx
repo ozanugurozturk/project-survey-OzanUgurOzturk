@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RadioQuestion = ({ question, options, answer, onAnswer, scores }) => {
+const RadioQuestion = ({ question, options, answer, onAnswer, scores, scoreScalers }) => {
   return (
     <div>
       <h2>{question}</h2>
@@ -14,7 +14,9 @@ const RadioQuestion = ({ question, options, answer, onAnswer, scores }) => {
             checked={answer === option}
             onChange={() => {
               const index = options.indexOf(option);
-              onAnswer(option, scores[index]);
+              const score = scores[index];
+              const scoreScaler = scoreScalers[index];
+              onAnswer(option, score, scoreScaler);
             }}
           />
           <label htmlFor={option}>{option}</label>

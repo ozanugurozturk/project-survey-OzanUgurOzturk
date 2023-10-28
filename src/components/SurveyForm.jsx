@@ -64,12 +64,12 @@ const SurveyForm = ({ questions }) => {
         const totalScore = scores.reduce((acc, score, index) => {
             return acc + (score || 0) * (scoreScalers[index] || 1);
         }, 0);
-    
+
         return totalScore;
     };
 
     return (
-        <div>
+        <div className="survey-container">
             {showPopup ? (
                 <SurveyResultPopup
                     questions={questions}
@@ -80,12 +80,14 @@ const SurveyForm = ({ questions }) => {
             ) : (
                 renderQuestion(questions[step], answers[step], handleAnswer)
             )}
-            <button onClick={handlePrevious} disabled={step === 0}>
-                Previous
-            </button>
-            <button onClick={handleNext}>
-                {step < questions.length - 1 ? 'Next' : 'Submit'}
-            </button>
+            <div className="button-container">
+                <button onClick={handlePrevious} disabled={step === 0}>
+                    Previous
+                </button>
+                <button onClick={handleNext}>
+                    {step < questions.length - 1 ? 'Next' : 'Submit'}
+                </button>
+            </div>
         </div>
     );
 };

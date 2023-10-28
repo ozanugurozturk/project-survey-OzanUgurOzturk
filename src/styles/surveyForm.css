@@ -1,0 +1,70 @@
+/* Style the main container */
+.survey-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Style the question title */
+  .question-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style the input elements */
+  .input-container {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  /* Style the radio/checkbox labels and options */
+  .radio-label {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  /* Style the range slider */
+  .range-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .range-slider-label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  /* Style the buttons */
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style the survey result popup (if applicable) */
+
+  
+    /* Add styles for your popup here */
+  

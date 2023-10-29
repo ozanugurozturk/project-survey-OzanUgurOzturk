@@ -6,6 +6,7 @@ import questions from './assets/questions.json';
 const App = () => {
   const [userName, setUserName] = useState('');
   const [showNameInput, setShowNameInput] = useState(true);
+  const [step, setStep] = useState(0);
 
   const handleNameSubmit = (name) => {
     if (name.trim() !== '') {
@@ -14,6 +15,12 @@ const App = () => {
     } else {
       alert("I totally understand that you don't want to give your name to me, but at least can you provide me a nickname for me to be able to communicate with you?");
     }
+  };
+
+  const handleRestart = () => {
+    setUserName('');
+    setShowNameInput(true);
+    setStep(0);
   };
 
   return (
@@ -38,7 +45,13 @@ const App = () => {
       </div>
       {!showNameInput && (
         <div className="survey-container">
-          <SurveyForm questions={questions} userName={userName} />
+          <SurveyForm
+            questions={questions}
+            userName={userName}
+            step={step}
+            setStep={setStep}
+            handleRestart={handleRestart}
+          />
         </div>
       )}
     </div>

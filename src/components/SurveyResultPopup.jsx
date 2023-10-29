@@ -17,7 +17,7 @@ const calculateSuggestions = (score) => {
 
 const SurveyResultPopup = ({ questions, answers, totalScore, userName, onClosePopup }) => {
     return (
-        <div className="survey-popup"> {/* Apply the CSS class */}
+        <div className="survey-popup">
             <h2>Survey Result</h2>
             <h3>Summary</h3>
             <ul>
@@ -30,7 +30,7 @@ const SurveyResultPopup = ({ questions, answers, totalScore, userName, onClosePo
             </ul>
             <h3>My Suggestion For You</h3>
             <p>
-                <strong>{userName}: </strong>
+                <strong>{userName}! </strong>
                 {calculateSuggestions(totalScore)}
             </p>
             <button onClick={onClosePopup}>Return</button>

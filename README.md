@@ -28,7 +28,7 @@ Prop drilling: I may overused it to achieve my goals. Next time with a beter pla
 
 ### View it live
 
-
+https://how-are-you-today-ozanugurozturk.netlify.app/
 
 ## Instructions
 

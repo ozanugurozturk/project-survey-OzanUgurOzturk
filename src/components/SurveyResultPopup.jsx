@@ -34,7 +34,7 @@ const SurveyResultPopup = ({ questions, answers, totalScore, userName, onClosePo
                 <strong>{userName}: </strong>
                 {calculateSuggestions(totalScore)}
             </p>
-            <button onClick={onClosePopup}>Close</button>
+            <button onClick={onClosePopup}>Return</button>
         </div>
     );
 };

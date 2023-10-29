@@ -82,12 +82,18 @@ const SurveyForm = ({ questions, userName }) => {
                 renderQuestion(questions[step], answers[step], handleAnswer)
             )}
             <div className="button-container">
-                <button onClick={handlePrevious} disabled={step === 0}>
-                    Previous
-                </button>
-                <button onClick={handleNext}>
-                    {step < questions.length - 1 ? 'Next' : 'Submit'}
-                </button>
+                {showPopup ? ( // Conditionally render the buttons
+                    <button onClick={() => setShowPopup(false)}>Close</button>
+                ) : (
+                    <>
+                        <button onClick={handlePrevious} disabled={step === 0}>
+                            Previous
+                        </button>
+                        <button onClick={handleNext}>
+                            {step < questions.length - 1 ? 'Next' : 'Get Suggestion'}
+                        </button>
+                    </>
+                )}
             </div>
         </div>
     );
@@ -102,8 +108,8 @@ const renderQuestion = (question, answer, onAnswer) => {
                     options={question.options}
                     answer={answer}
                     onAnswer={onAnswer}
-                    scores={question.score} // Pass scores as a prop
-                    scoreScalers={question.scoreScaler} // Pass scoreScaler as a prop
+                    scores={question.score}
+                    scoreScalers={question.scoreScaler}
                 />
             );
         case 'select':
@@ -113,8 +119,8 @@ const renderQuestion = (question, answer, onAnswer) => {
                     options={question.options}
                     answer={answer}
                     onAnswer={onAnswer}
-                    scores={question.score} // Pass scores as a prop
-                    scoreScalers={question.scoreScaler} // Pass scoreScaler as a prop
+                    scores={question.score}
+                    scoreScalers={question.scoreScaler}
                 />
             );
         case 'checkbox':
@@ -124,8 +130,8 @@ const renderQuestion = (question, answer, onAnswer) => {
                     options={question.options}
                     answer={answer}
                     onAnswer={onAnswer}
-                    scores={question.score} // Pass scores as a prop
-                    scoreScalers={question.scoreScaler} // Pass scoreScaler as a prop
+                    scores={question.score}
+                    scoreScalers={question.scoreScaler}
                 />
             );
         case 'range':
@@ -136,8 +142,8 @@ const renderQuestion = (question, answer, onAnswer) => {
                     max={question.max}
                     answer={answer}
                     onAnswer={onAnswer}
-                    scores={question.score} // Pass scores as a prop
-                    scoreScalers={question.scoreScaler} // Pass scoreScaler as a prop
+                    scores={question.score}
+                    scoreScalers={question.scoreScaler}
                 />
             );
         default:
@@ -145,7 +151,6 @@ const renderQuestion = (question, answer, onAnswer) => {
     }
 };
 
-// PropTypes are defined for the 'questions' prop
 SurveyForm.propTypes = {
     questions: PropTypes.arrayOf(
         PropTypes.shape({
@@ -154,8 +159,8 @@ SurveyForm.propTypes = {
             options: PropTypes.arrayOf(PropTypes.string),
             min: PropTypes.number,
             max: PropTypes.number,
-            score: PropTypes.arrayOf(PropTypes.number), // Add a score prop
-            scoreScaler: PropTypes.arrayOf(PropTypes.number), // Add scoreScaler prop
+            score: PropTypes.arrayOf(PropTypes.number),
+            scoreScaler: PropTypes.arrayOf(PropTypes.number),
         })
     ).isRequired,
 };

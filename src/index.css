@@ -14,8 +14,8 @@ code {
 }
 
 .error-message {
-  color: red;
-  font-size: 14px;
+  color: rgb(221, 255, 0);
+  font-size: 16px;
   margin-top: 8px;
 }
 
@@ -41,15 +41,15 @@ code {
 .progress-bar {
   width: 100%;
   height: 20px;
-  background-color: #ddd; /* Color of the empty bar */
-  border: 1px solid #ccc; /* Border for the empty bar */
-  border-radius: 10px; /* To create smoother edges */
+  background-color: #ddd;
+  border: 1px solid #ccc; 
+  border-radius: 10px; 
 }
 
 .progress-bar-inner {
-  height: 100%; /* Set the height to 100% to fill the entire empty bar */
+  height: 100%; 
   background-color: #19647E;
-  border-radius: 10px; /* Match the border-radius for smoother edges */
+  border-radius: 10px; 
   transition: width 0.7s;
   display: flex;
   align-items: center;

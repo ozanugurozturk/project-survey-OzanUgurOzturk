@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SurveyForm from './components/SurveyForm';
 import WeatherCard from './components/WeatherCard';
 import questions from './assets/questions.json';
@@ -7,13 +7,19 @@ const App = () => {
   const [userName, setUserName] = useState('');
   const [showNameInput, setShowNameInput] = useState(true);
   const [step, setStep] = useState(0);
+  const [nameError, setNameError] = useState('');
+  const namePattern = /^[A-Za-z\s]{2,30}$/;
 
   const handleNameSubmit = (name) => {
     if (name.trim() !== '') {
-      setUserName(name);
-      setShowNameInput(false);
+      if (namePattern.test(name)) {
+        setUserName(name);
+        setShowNameInput(false);
+      } else {
+        setNameError('Please enter a valid name with 2 to 30 letters and spaces without any numbers and symbols.');
+      }
     } else {
-      alert("I totally understand that you don't want to give your name to me, but at least can you provide me a nickname for me to be able to communicate with you?");
+      setNameError("I totally understand that you don't want to give your name to me, but at least can you provide me a nickname for me to be able to communicate with you?");
     }
   };
 
@@ -33,9 +39,13 @@ const App = () => {
             <input
               type="text"
               value={userName}
-              onChange={(e) => setUserName(e.target.value)}
+              onChange={(e) => {
+                setUserName(e.target.value);
+                setNameError('');
+              }}
             />
             <button onClick={() => handleNameSubmit(userName)}>Submit</button>
+            {nameError && <div className="error-message">{nameError}</div>}
           </div>
         ) : (
           <div>

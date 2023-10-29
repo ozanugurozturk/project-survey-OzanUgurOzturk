@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const calculateSuggestions = (score) => {
-    console.log(score);
     if (score <= -100) {
         return "Call your parents or someone who loves you no matter who you are.";
     } else if (score <= 0) {

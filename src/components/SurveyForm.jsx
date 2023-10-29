@@ -6,7 +6,7 @@ import CheckboxQuestion from './questionTypes/CheckboxQuestion';
 import RangeSliderQuestion from './questionTypes/RangeSliderQuestion';
 import SurveyResultPopup from './SurveyResultPopup';
 
-const SurveyForm = ({ questions }) => {
+const SurveyForm = ({ questions, userName }) => {
     const [step, setStep] = useState(0);
     const [answers, setAnswers] = useState(Array(questions.length).fill(''));
     const [scores, setScores] = useState(Array(questions.length).fill(0));
@@ -75,6 +75,7 @@ const SurveyForm = ({ questions }) => {
                     questions={questions}
                     answers={answers}
                     totalScore={calculateTotalScore()}
+                    userName={userName}
                     onClosePopup={() => setShowPopup(false)}
                 />
             ) : (

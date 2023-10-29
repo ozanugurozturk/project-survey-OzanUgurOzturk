@@ -4,15 +4,43 @@ import WeatherCard from './components/WeatherCard';
 import questions from './assets/questions.json';
 
 const App = () => {
+  const [userName, setUserName] = useState('');
+  const [showNameInput, setShowNameInput] = useState(true);
+
+  const handleNameSubmit = (name) => {
+    if (name.trim() !== '') {
+      setUserName(name);
+      setShowNameInput(false);
+    } else {
+      alert("I totally understand that you don't want to give your name to me, but at least can you provide me a nickname for me to be able to communicate with you?");
+    }
+  };
+
   return (
     <div>
       <WeatherCard />
       <div className="content-container">
-        <h1>How are you feeling today my friend?</h1>
+        {showNameInput ? (
+          <div>
+            <h1>Can I get your name, please?</h1>
+            <input
+              type="text"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+            <button onClick={() => handleNameSubmit(userName)}>Submit</button>
+          </div>
+        ) : (
+          <div>
+            <h1>{`${userName}! How are you feeling today, my friend?`}</h1>
+          </div>
+        )}
       </div>
-      <div className="survey-container">
-        <SurveyForm questions={questions} />
-      </div>
+      {!showNameInput && (
+        <div className="survey-container">
+          <SurveyForm questions={questions} userName={userName} />
+        </div>
+      )}
     </div>
   );
 };

@@ -16,7 +16,7 @@ const calculateSuggestions = (score) => {
     }
 };
 
-const SurveyResultPopup = ({ questions, answers, totalScore, onClosePopup }) => {
+const SurveyResultPopup = ({ questions, answers, totalScore,userName, onClosePopup }) => {
     return (
         <div>
             <h2>Survey Result</h2>
@@ -29,7 +29,7 @@ const SurveyResultPopup = ({ questions, answers, totalScore, onClosePopup }) => 
                 ))}
             </ul>
             <h3>Suggestions</h3>
-            <p>{calculateSuggestions(totalScore)}</p>
+            <p>{`${userName}! ${calculateSuggestions(totalScore)}`}</p>
             <button onClick={onClosePopup}>Close</button>
         </div>
     );

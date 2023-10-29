@@ -1,0 +1,32 @@
+.survey-popup {
+    background-color: #EEE5E5;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .survey-popup h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .survey-popup h3 {
+    font-size: 18px;
+    margin: 16px 0;
+  }
+  
+  .survey-popup ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .survey-popup li {
+    margin: 8px 0;
+  }
+  
+  .survey-popup strong {
+    font-weight: bold;
+  }
+  
+  .survey-popup p {
+    margin: 8px 0;
+  }

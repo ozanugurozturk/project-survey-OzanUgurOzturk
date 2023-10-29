@@ -32,7 +32,7 @@ const App = () => {
           </div>
         ) : (
           <div>
-            <h1>{`${userName}! How are you feeling today, my friend?`}</h1>
+            <h1>{`${userName}! I have some questions to ask you.`}</h1>
           </div>
         )}
       </div>

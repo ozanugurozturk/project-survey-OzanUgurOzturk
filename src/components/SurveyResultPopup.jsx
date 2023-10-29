@@ -16,20 +16,24 @@ const calculateSuggestions = (score) => {
     }
 };
 
-const SurveyResultPopup = ({ questions, answers, totalScore,userName, onClosePopup }) => {
+const SurveyResultPopup = ({ questions, answers, totalScore, userName, onClosePopup }) => {
     return (
-        <div>
+        <div className="survey-popup"> {/* Apply the CSS class */}
             <h2>Survey Result</h2>
             <h3>Summary</h3>
             <ul>
                 {questions.map((question, index) => (
                     <li key={index}>
-                        {`${question.question} => ${answers[index]}`}
+                        {`${question.question} => `}
+                        <strong>{answers[index]}</strong>
                     </li>
                 ))}
             </ul>
-            <h3>Suggestions</h3>
-            <p>{`${userName}! ${calculateSuggestions(totalScore)}`}</p>
+            <h3>My Suggestion For You</h3>
+            <p>
+                <strong>{userName}: </strong>
+                {calculateSuggestions(totalScore)}
+            </p>
             <button onClick={onClosePopup}>Close</button>
         </div>
     );

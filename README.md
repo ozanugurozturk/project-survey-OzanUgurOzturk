@@ -6,11 +6,11 @@
 
 # Survey Project
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+I have created a "How are you?" survey. It basically asks general questions and calculate a score based on user's answers and suggests something to do in summary. I just wanted to add the weather app fetching in my project to try out new things within React. I will definately improve my project from this point.
 
 ## Getting Started with the Project
+
+I planned it as a questionary and implemented prop drilling with the examples from youtube. I created different question components to display them in my survey, i created a basic json questions file to get questions from. then i builded it on top that base sstructure.
 
 ### Dependency Installation & Startup Development Server
 
@@ -24,11 +24,11 @@ npm i && code . && npm run dev
 
 ### The Problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Prop drilling: I may overused it to achieve my goals. Next time with a beter planning i might be able use it less to not confuse myself and other developers.
 
 ### View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+
 
 ## Instructions
 

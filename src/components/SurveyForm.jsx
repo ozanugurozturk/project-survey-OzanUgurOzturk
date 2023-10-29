@@ -69,6 +69,11 @@ const SurveyForm = ({ questions, userName, step, setStep, handleRestart }) => {
 
   return (
     <div className="survey-container">
+      <div className="progress-bar">
+        <div className="progress-bar-inner" style={{ width: `${((step + 1) / questions.length) * 100}%` }}>
+          {`Question ${step + 1} of ${questions.length}`}
+        </div>
+      </div>
       {showPopup ? (
         <SurveyResultPopup
           questions={questions}

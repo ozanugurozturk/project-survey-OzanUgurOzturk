@@ -47,7 +47,7 @@ const WeatherCard = () => {
             {weatherData && (
                 <div>
                     <div className="weather-header">
-                        <h2>Today's Weather in {weatherData.name}</h2>
+                        <h2 className="weather-title">Today's Weather in {weatherData.name}</h2>
                     </div>
                     <div className="weather-info">
                         <p>

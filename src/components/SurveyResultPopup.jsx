@@ -24,7 +24,7 @@ const SurveyResultPopup = ({ questions, answers, totalScore, onClosePopup }) => 
             <ul>
                 {questions.map((question, index) => (
                     <li key={index}>
-                        {`${question.question}: ${answers[index]}`}
+                        {`${question.question} => ${answers[index]}`}
                     </li>
                 ))}
             </ul>

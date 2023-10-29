@@ -1,4 +1,5 @@
 :root {
+  background: #37392E;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -16,4 +17,23 @@ code {
   color: red;
   font-size: 14px;
   margin-top: 8px;
+}
+
+.content-container {
+  background: #28AFB0; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  border-radius: 5px; 
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  font-size: 14px;
+  color: #F5E4D7;
+}
+
+.survey-container {
+  background: #DDCECD; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+  border-radius: 5px; 
+  padding: 20px;
+  margin: 10px;
 }

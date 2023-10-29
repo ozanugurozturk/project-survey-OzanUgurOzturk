@@ -6,9 +6,13 @@ import questions from './assets/questions.json';
 const App = () => {
   return (
     <div>
-      <WeatherCard /> {/* Add WeatherCard component here */}
-      <h1>How are you feeling today?</h1>
-      <SurveyForm questions={questions} />
+      <WeatherCard />
+      <div className="content-container">
+        <h1>How are you feeling today my friend?</h1>
+      </div>
+      <div className="survey-container">
+        <SurveyForm questions={questions} />
+      </div>
     </div>
   );
 };

@@ -13,6 +13,26 @@ code {
     monospace;
 }
 
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+fieldset {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  
+}
+
+legend {
+  padding-top: 2px;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
 .error-message {
   color: rgb(221, 255, 0);
   font-size: 16px;

@@ -36,8 +36,10 @@ const App = () => {
         {showNameInput ? (
           <div>
             <h1>Can I get your name, please?</h1>
+            <label htmlFor="userName">Name:</label>
             <input
               type="text"
+              id="userName" // Adding an id for the input field
               value={userName}
               onChange={(e) => {
                 setUserName(e.target.value);
@@ -49,19 +51,22 @@ const App = () => {
           </div>
         ) : (
           <div>
-            <h1>{`${userName}! I have some questions to ask you.`}</h1>
+            <h1>{`Hello ${userName}! I have some questions to ask you. Can you answer them?`}</h1>
           </div>
         )}
       </div>
       {!showNameInput && (
         <div className="survey-container">
-          <SurveyForm
-            questions={questions}
-            userName={userName}
-            step={step}
-            setStep={setStep}
-            handleRestart={handleRestart}
-          />
+          <fieldset>
+            <legend>{`${userName}'s Survey`}</legend>
+            <SurveyForm
+              questions={questions}
+              userName={userName}
+              step={step}
+              setStep={setStep}
+              handleRestart={handleRestart}
+            />
+          </fieldset>
         </div>
       )}
     </div>

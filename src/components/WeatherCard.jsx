@@ -54,9 +54,9 @@ const WeatherCard = () => {
                             Time: {currentTime} | Weather: {weatherData.temperature} °C / {weatherData.description}
                         </p>
                         <div className="sunrise-sunset">
-                            <img src="public\sunrise-weather.gif" alt="Sunrise" className="sunrise-icon" />
+                            <img src="/sunrise-weather.gif" alt="Sunrise" className="sunrise-icon" />
                             <p>{weatherData.sunrise}</p>
-                            <img src="public\sunset-weather.gif" alt="Sunset" className="sunset-icon" />
+                            <img src="/sunset-weather.gif" alt="Sunset" className="sunset-icon" />
                             <p>{weatherData.sunset}</p>
                         </div>
                     </div>

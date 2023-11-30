@@ -17,9 +17,9 @@ const calculateSuggestions = (score) => {
 
 const SurveyResultPopup = ({ questions, answers, totalScore, userName, onClosePopup }) => {
     return (
-        <div className="survey-popup">
-            <h2>Survey Result</h2>
-            <h3>Summary</h3>
+        <div className="survey-popup" role="dialog" aria-labelledby="survey-result-title">
+            <h1 id="survey-result-title">Survey Result</h1>
+            <h2>Summary</h2>
             <ul>
                 {questions.map((question, index) => (
                     <li key={index}>
@@ -28,7 +28,7 @@ const SurveyResultPopup = ({ questions, answers, totalScore, userName, onClosePo
                     </li>
                 ))}
             </ul>
-            <h3>My Suggestion For You</h3>
+            <h2>My Suggestion For You</h2>
             <p>
                 <strong>{userName}! </strong>
                 {calculateSuggestions(totalScore)}

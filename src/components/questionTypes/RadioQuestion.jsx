@@ -1,11 +1,12 @@
 import React from 'react';
+import './QuestionTypes.css'
 
 const RadioQuestion = ({ question, options, answer, onAnswer, scores, scoreScalers }) => {
   return (
-    <div>
+    <div className="question-container">
       <h2>{question}</h2>
       {options.map((option) => (
-        <div key={option}>
+        <div key={option} className="option-container">
           <input
             type="radio"
             id={option}

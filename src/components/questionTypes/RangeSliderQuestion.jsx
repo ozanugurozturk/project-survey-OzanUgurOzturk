@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './QuestionTypes.css'
 
 const RangeSliderQuestion = ({ question, min, max, answer, onAnswer, scores, scoreScalers }) => {
     const [sliderValue, setSliderValue] = useState(answer.toString());
@@ -13,7 +14,7 @@ const RangeSliderQuestion = ({ question, min, max, answer, onAnswer, scores, sco
     };
 
     return (
-        <div>
+        <div className="question-container">
             <h2>{question}</h2>
             <input
                 type="range"

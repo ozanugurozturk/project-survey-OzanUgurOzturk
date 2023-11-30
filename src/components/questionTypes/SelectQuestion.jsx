@@ -1,4 +1,5 @@
 import React from 'react';
+import './QuestionTypes.css'
 
 const SelectQuestion = ({ question, options, answer, onAnswer, scores, scoreScalers }) => {
     const handleChange = (selectedOption) => {
@@ -13,7 +14,7 @@ const SelectQuestion = ({ question, options, answer, onAnswer, scores, scoreScal
     };
 
     return (
-        <div>
+        <div className="question-container">
             <h2>{question}</h2>
             <select value={answer} onChange={(e) => handleChange(e.target.value)}>
                 <option value="">Select an option</option>

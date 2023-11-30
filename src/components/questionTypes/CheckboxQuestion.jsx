@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import './QuestionTypes.css'
 
 const CheckboxQuestion = ({ question, options, answer, onAnswer, scores, scoreScalers }) => {
     const handleOptionChange = (option, score, scoreScaler) => {
@@ -7,10 +8,10 @@ const CheckboxQuestion = ({ question, options, answer, onAnswer, scores, scoreSc
     };
 
     return (
-        <div>
+        <div className="question-container">
             <h2>{question}</h2>
             {options.map((option, index) => (
-                <div key={index}>
+                <div key={index} className="option-container">
                     <input
                         type="checkbox"
                         id={option}

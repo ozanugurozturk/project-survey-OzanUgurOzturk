@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import SurveyResultPopupPropType from '../propTypes/SurveyResultPopupPropType';
 import './SurveyResultPopup.css';
 
 const calculateSuggestions = (score) => {
@@ -39,11 +39,6 @@ const SurveyResultPopup = ({ questions, answers, totalScore, userName, onClosePo
     );
 };
 
-SurveyResultPopup.propTypes = {
-    questions: PropTypes.arrayOf(PropTypes.object).isRequired,
-    answers: PropTypes.arrayOf(PropTypes.string).isRequired,
-    totalScore: PropTypes.number.isRequired,
-    onClosePopup: PropTypes.func.isRequired,
-};
+SurveyResultPopupPropType.propTypes = SurveyResultPopupPropType;
 
 export default SurveyResultPopup;

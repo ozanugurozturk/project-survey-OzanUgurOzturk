@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import RadioQuestion from './questionTypes/RadioQuestion';
 import SelectQuestion from './questionTypes/SelectQuestion';
 import CheckboxQuestion from './questionTypes/CheckboxQuestion';
 import RangeSliderQuestion from './questionTypes/RangeSliderQuestion';
 import SurveyResultPopup from './SurveyResultPopup';
+import SurveyFormPropType from '../propTypes/SurveyFormPropType';
 
 const SurveyForm = ({ questions, userName, step, setStep, handleRestart }) => {
   const [answers, setAnswers] = useState(Array(questions.length).fill(''));
@@ -155,22 +155,6 @@ const renderQuestion = (question, answer, onAnswer) => {
   }
 };
 
-SurveyForm.propTypes = {
-  questions: PropTypes.arrayOf(
-    PropTypes.shape({
-      type: PropTypes.string.isRequired,
-      question: PropTypes.string.isRequired,
-      options: PropTypes.arrayOf(PropTypes.string),
-      min: PropTypes.number,
-      max: PropTypes.number,
-      score: PropTypes.arrayOf(PropTypes.number),
-      scoreScaler: PropTypes.arrayOf(PropTypes.number),
-    })
-  ).isRequired,
-  userName: PropTypes.string.isRequired,
-  step: PropTypes.number.isRequired,
-  setStep: PropTypes.func.isRequired,
-  handleRestart: PropTypes.func.isRequired,
-};
+SurveyForm.propTypes = SurveyFormPropType;
 
 export default SurveyForm;

@@ -1,5 +1,5 @@
 import React from 'react';
-import SurveyContainer from './components/SurveyContainer';  // Update the import path if needed
+import SurveyContainer from './components/SurveyContainer';
 
 const App = () => {
   return (

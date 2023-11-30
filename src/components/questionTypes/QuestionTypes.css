@@ -3,5 +3,12 @@
 }
 
 .option-container {
-    margin-bottom: 8px;
+    margin: 8px;
+    display: flex; /* Use flexbox */
+    align-items: center;
+}
+
+.option-container input {
+    margin-bottom: 8px; 
+    margin-right: 8px;
 }

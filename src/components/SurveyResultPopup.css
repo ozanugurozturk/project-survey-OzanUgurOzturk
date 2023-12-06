@@ -31,3 +31,9 @@
   .survey-popup p {
     margin: 8px 0;
   }
+
+  @media (max-width: 768px) {
+    .survey-popup {
+      padding: 2px;
+    }
+  }

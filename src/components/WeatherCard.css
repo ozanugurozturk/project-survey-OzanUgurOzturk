@@ -58,7 +58,8 @@
   @media (max-width: 768px) {
     .weather-card {
       font-size: 14px;
-      padding: 10px;
+      padding: 3px;
+      margin: 3px;
     }
   
     .weather-header {

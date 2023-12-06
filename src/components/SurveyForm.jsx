@@ -71,7 +71,7 @@ const SurveyForm = ({ questions, userName, step, setStep, handleRestart }) => {
     <div className="survey-container">
       <div className="progress-bar" role="progressbar" aria-valuenow={(step + 1) / questions.length * 100} aria-valuemin="0" aria-valuemax="100">
         <div className="progress-bar-inner" style={{ width: `${((step + 1) / questions.length) * 100}%` }}>
-          {`Question ${step + 1} of ${questions.length}`}
+          {`${step + 1}/${questions.length}`}
         </div>
       </div>
       {showPopup ? (
